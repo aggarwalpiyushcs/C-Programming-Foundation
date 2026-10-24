@@ -1,0 +1,19 @@
+# Compiled files
+*.exe
+*.o
+*.out
+
+# Python generated files
+__pycache__/
+*.pyc
+
+# IDE settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
