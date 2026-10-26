@@ -1,39 +1,62 @@
 #include<iostream>
+#include<vector>
+#include<unordered_map>
 #include<string>
+
 using namespace std;
 
-int main(){
-    string name;
-    long int enrollment;
-    float a, b, c, sum, average;
-    cout << "Enter your full name: ";
-    getline(cin, name);
+int marks_input(){
+        float marks;
+        cout << "Enter student's marks: ";
+        cin >> marks;
+        string grade;
+        
 
-    cout << "Enter your Enrollment Number: ";
-    cin >> enrollment;
+        if(marks < 0){
+            cout << "Enter valid marks!\nMarks Cannot be Negative.\n";
+        }
 
-    cout << "Enter Subject A Marks: ";
-    cin >> a;
+        if(marks > 100){
+            cout << "Enter valid marks!\nMarks Cannot exceed 100.\n";
+        }
 
-    cout << "Enter Subject B Marks: ";
-    cin >> b;
+        if(marks > 90 && marks <= 100){
+            grade = 'A';
+        }
+        else if(marks > 80 && marks <=90){
+            grade = 'B+';
+        }
+        else if(marks > 70 && marks <= 80 ){
+            grade = 'B';
+        }
+        if(marks > 60 && marks <= 70){
+            grade = 'C';
+        }
+        else if(marks > 50 && marks <=60){
+            grade = 'D';
+        }
+        else if(marks > 40 && marks <= 50 ){
+            grade = 'E';
+        }
+        else(marks<40){
+            grade = 'F';
+        }
 
-    cout << "Enter Subject C Marks: ";
-    cin >> c;
+        char result = grade;
+        grades.push_back(result);
 
-    if((a>100 || a < 0) || (b>100 || b < 0) || (c>100 || c<0)){
-        cout << "Invalid range of marks!\nEnter valid marks range from 0 to 100.";
+    
     }
 
-    sum = a+b+c;
-    average = sum/3;
+int main(){
+    vector <string> grades;
+    unordered_map <string, int> count;
 
-    cout <<"\n----------Student Report----------\n";
-    cout<<"Student name: \t" << name <<"\n";
-    cout<<"Enrollment number: \t" << enrollment <<"\n";
-    cout<<"Subject A Marks: \t" << a <<"\n";
-    cout<<"Subject B Marks: \t" << b <<"\n";
-    cout<<"Subject C Marks: \t" << c <<"\n";
-    cout<<"Grand Totol out of 300: \t" << sum <<"\n";
-    cout<<"Average: \t" << average <<"\n";
+    int no;
+    cout << "Enter number of students: ";
+    cin >> no;
+
+    for(int i =1; i<=no; i++){
+        marks_input();
+    }
 }
